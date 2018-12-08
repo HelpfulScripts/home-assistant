@@ -13,6 +13,8 @@ tests/testing_config/home-assistant.log
 .LSOverride
 Icon
 
+myConfig
+
 # Thumbnails
 ._*
 
