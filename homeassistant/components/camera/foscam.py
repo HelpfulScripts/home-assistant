@@ -57,6 +57,11 @@ class FoscamCam(Camera):
         self._foscam_session = FoscamCamera(
             ip_address, port, self._username, self._password, verbose=False)
 
+        t = time.localtime(time.time())
+        self._foscam_session.set_system_time(1, 'time.nist.gov', 0,
+            1, 0, 0, 1, t[0],
+            t[1], t[2], t[3], t[4], t[5], callback=None)
+
     def camera_image(self):
         """Return a still image response from the camera."""
         # Send the request to snap a picture and return raw jpg data
